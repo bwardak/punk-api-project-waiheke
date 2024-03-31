@@ -1,0 +1,20 @@
+.beers {
+  max-width: 450px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 30px;
+  flex: 0 0 calc(33.33% - 60px);
+
+  &__image {
+    height: 300px;
+    width: auto;
+  }
+
+  &__description {
+    text-align: center;
+  }
+}

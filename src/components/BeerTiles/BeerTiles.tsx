@@ -10,9 +10,9 @@ const BeerTiles = ({image, name, description}: Beers) => {
   
   return (
     <div className="beers">
-      <img src={image} alt="Beer" />
-      <p>{name}</p>
-      <p>{description}</p>
+      <img className='beers__image' src={image} alt="Beer" />
+      <h1 className='beers__name'>{name}</h1>
+      <p className='beers__description'>{description}</p>
     </div>
   )
 }

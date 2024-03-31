@@ -1,13 +1,33 @@
+import { useState } from 'react'
 import './App.scss'
-import BeerTiles from './components/BeerTiles/BeerTiles'
+import BeerContainer from './components/BeerContainer/BeerContainer'
+import SideNav from './components/SideNav/SideNav'
 import beers from './data/beers'
 
+
 const App = () => {
-  return (
-    <div>
-      <BeerTiles image={beers[0].image_url} name={beers[0].name} description={beers[0].description}/>
-    </div>
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchTermChange = (cleanInput: string) => {
+    setSearchTerm(cleanInput)
+  }
+
+  const searchedBeers = beers.filter((beer) => 
+    beer.name.toLowerCase().includes(searchTerm)
   )
+
+ 
+
+  return (
+    <div className='app-container'>
+      <div className="nav-bar">
+        <SideNav onSearchTermChange={handleSearchTermChange}/>
+      </div>
+      <div className="beer-tiles">
+        <BeerContainer searchBeers={searchedBeers}/>
+      </div>
+    </div>
+  );
 }
 
 export default App
