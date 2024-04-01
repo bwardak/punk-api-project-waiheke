@@ -6,24 +6,24 @@ import FilterButtons from '../FilterButtons/FilterButtons';
 
 type SearchValue = {
   onSearchTermChange: (value: string) => void;
+  onCheckBoxChange:(value: boolean) => void;
 }
 
 
-const SideNav = ({onSearchTermChange}: SearchValue) => {
+const SideNav = ({onSearchTermChange, onCheckBoxChange}: SearchValue) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [checked, setChecked] = useState<boolean>(false)
+  
+  onCheckBoxChange(checked);
 
   const handleInput = (event: FormEvent<HTMLInputElement>) => {
     const cleanInput = event.currentTarget.value.toLowerCase();
     setSearchTerm(cleanInput);
     onSearchTermChange(cleanInput)
-    console.log(cleanInput);
   };
 
   const onCheck = () => {
-    setChecked(!checked)
-    console.log("checked is" + checked);
-    
+    setChecked(!checked);
   }
 
 

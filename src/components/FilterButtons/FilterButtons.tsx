@@ -8,6 +8,8 @@ type FilterButtonsProps = {
 }
 
 const FilterButtons = ({label, handleCheck, checked}: FilterButtonsProps) => {
+  console.log(checked);
+  
   return (
     <div className="filter-buttons">
       <label htmlFor={label} className='filter-buttons__label'>{label}</label>
