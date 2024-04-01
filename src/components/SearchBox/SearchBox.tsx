@@ -10,7 +10,7 @@ type SearchBoxProps = {
 const SearchBox = ({ label, searchTerm, handleInput }: SearchBoxProps) => {
   return (
     <div className="search-box">
-      <label htmlFor={label}>Search: </label>
+      <label htmlFor={label} className='search-box__label'>{label}</label>
       <input
         className="search-box__input"
         type="text"
