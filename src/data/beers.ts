@@ -9,13 +9,13 @@ const beers: Beer[] = [
     description:
       "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
     image_url: "https://images.punkapi.com/v2/keg.png",
-    abv: 4.5,
+    abv: 6.5,
     ibu: 60,
     target_fg: 1010,
     target_og: 1044,
     ebc: 20,
     srm: 10,
-    ph: 4.4,
+    ph: 3.4,
     attenuation_level: 75,
     volume: {
       value: 20,

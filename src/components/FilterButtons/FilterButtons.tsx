@@ -8,7 +8,6 @@ type FilterButtonsProps = {
 }
 
 const FilterButtons = ({label, handleCheck, checked}: FilterButtonsProps) => {
-  console.log(checked);
   
   return (
     <div className="filter-buttons">
