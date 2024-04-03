@@ -10,5 +10,14 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+    <script>bubbly({
+      colorStart: "#b35b00",
+      colorStop: "#762b00",
+      shadowColor: "#000",
+    fillFunc: () => `hsla(0, 100%, 50%, ${Math.random() * 0.25})`
+});</script>
   </body>
 </html>
+
+
