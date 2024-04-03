@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import BeerContainer from "./components/BeerContainer/BeerContainer";
 import SideNav from "./components/SideNav/SideNav";
-import beers from "./data/beers";
+import beer from "./data/beers";
 import { Beer } from "./data/types";
+import beers from "./data/dataFormatted (1)";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -12,16 +13,6 @@ const App = () => {
   const [acidityChecked, setAcidityChecked] = useState<boolean>(false);
   const [filteredBeers, setFilteredBeers] = useState<Beer[]>(beers)
 
-  const getBeers = async() => {
-    const url = `C:\Users\bahee\nology\nology-projects\project-5-punkapi\punk-api-project-waiheke\src\data\data (2).json`;
-    const res = await fetch(url)
-    const data: Beer = await res.json()
-    console.log(data);
-  }
-
-  useEffect(() => {
-    getBeers()
-  }, [])
 
   const handleSearchTermChange = (cleanInput: string) => {
     setSearchTerm(cleanInput);

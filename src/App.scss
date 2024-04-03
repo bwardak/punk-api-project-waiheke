@@ -1,14 +1,24 @@
+@use '../../assets/variables/variables' as *;
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
+
 .app-container {
   display: flex;
   height: 100vh;
+  background-color: #AB5700;
 }
 
 .nav-bar {
-  position: sticky;
+  background-color: #995104;
+  width: 300px;
+  height: 100vh; // Adjust this value as needed
+}
+
+.beer-tiles {
+  width: 1350px;
 }

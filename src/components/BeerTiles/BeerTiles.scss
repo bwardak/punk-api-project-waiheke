@@ -1,9 +1,11 @@
+@use '../../assets/variables/variables' as *;
+
 .beers {
-  max-width: 450px;
+  max-width: 385px;
   height: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   border: 2px solid black;
   margin: 30px;
@@ -11,10 +13,22 @@
 
   &__image {
     height: 300px;
+    max-width: 385px;
     width: auto;
+    margin: 10px;
   }
 
   &__description {
+    text-align: center;
+    height: 225px;
+    overflow: hidden;
+  }
+
+  &__name {
+    max-height: 75px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 100%;
     text-align: center;
   }
 }

@@ -1,6 +1,9 @@
+@use '../../assets/variables/variables' as *;
+
 .nav {
-  background-color: gray;
+  background-color: white;
   height: 100vh;
   width: 300px;
-  position: sticky;
+  position: fixed;
+  top: 0;
 }
