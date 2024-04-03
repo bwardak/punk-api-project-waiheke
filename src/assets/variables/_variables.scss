@@ -1,3 +1,9 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 $color-light-1: #f28e1c;
 $color-light-2: #d27400;
 $color-light-3: #b35b00;
@@ -9,3 +15,5 @@ $color-medium-3: #591300;
 $color-dark-1: #3d0000;
 $color-dark-2: #250001;
 $color-black: #000000;
+
+$primary-font: "Barlow", sans-serif;

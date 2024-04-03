@@ -2,78 +2,23 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import BeerContainer from "./components/BeerContainer/BeerContainer";
 import SideNav from "./components/SideNav/SideNav";
-import beer from "./data/beers";
 import { Beer } from "./data/types";
 import beers from "./data/dataFormatted (1)";
+import { BrowserRouter, Route, Routes  } from "react-router-dom";
+import BeerContent from "./components/BeerContent/BeerContent";
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  const [abvChecked, setAbvChecked] = useState<boolean>(false);
-  const [classicChecked, setClassicChecked] = useState<boolean>(false);
-  const [acidityChecked, setAcidityChecked] = useState<boolean>(false);
-  const [filteredBeers, setFilteredBeers] = useState<Beer[]>(beers)
-
-
-  const handleSearchTermChange = (cleanInput: string) => {
-    setSearchTerm(cleanInput);
-  };
-
-  const handleAbvCheckboxChange = (checked: boolean) => {
-    setAbvChecked(checked);
-  };
-
-  const handleClassicCheckboxChange = (checked: boolean) => {
-    setClassicChecked(checked);
-  };
-
-  const handleAcidityCheckboxChange = (checked: boolean) => {
-    setAcidityChecked(checked);
-  };
-
-  useEffect(() => {
-    let beersCopy = [...beers];
-
-    if (abvChecked) {
-      beersCopy = beersCopy.filter((beer) => beer.abv >= 6);
-    }
-    if (classicChecked) {
-      beersCopy = beersCopy.filter((beer) => {
-        let splitDate = beer.first_brewed.split("/");
-        let yearBrewed = splitDate.slice(1);
-        return parseInt(yearBrewed[0]) < 2010;
-      });
-    }
-    if (acidityChecked) {
-      beersCopy = beersCopy.filter((beer) => beer.ph <= 4);
-    }
-    if (!abvChecked && !classicChecked && !acidityChecked) {
-      beersCopy = beersCopy;
-    }
-    setFilteredBeers(beersCopy)
-    console.log(beersCopy);
-    
-  }, [abvChecked, classicChecked, acidityChecked])
   
-  
-
-  const searchedBeers = filteredBeers.filter((beer) =>
-    beer.name.toLowerCase().includes(searchTerm)
-  );
 
   return (
-    <div className="app-container">
-      <div className="nav-bar">
-        <SideNav
-          onSearchTermChange={handleSearchTermChange}
-          onAbvCheckBoxChange={handleAbvCheckboxChange}
-          onClassicCheckBoxChange={handleClassicCheckboxChange}
-          onAcidityCheckBoxChange={handleAcidityCheckboxChange}
-        />
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path="/beers" element={<BeerContent />} />
+            
+        </Routes>
       </div>
-      <div className="beer-tiles">
-        <BeerContainer searchBeers={searchedBeers} />
-      </div>
-    </div>
+    </BrowserRouter>
   );
 };
 

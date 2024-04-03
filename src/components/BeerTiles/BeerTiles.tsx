@@ -8,48 +8,52 @@ type Beers = {
   brewDate: string;
   abv: number;
   ph: number | null;
+  foodPairing: string[];
+  sideNavToggled: boolean;
 }
 
-const BeerTiles = ({image, name, description, tagline, brewDate, abv, ph}: Beers) => {
+const BeerTiles = ({image, name, description, tagline, brewDate, abv, ph, foodPairing, sideNavToggled}: Beers) => {
 
-  let beerDescription: string[] = description.split(".");
-let truncatedBeerDescription: string = "";
-let totalLength: number = 0;
+console.log(sideNavToggled);
 
-for (let i: number = 0; i < beerDescription.length; i++) {
-    const sentence = beerDescription[i].trim() + ".";
-    if (totalLength + sentence.length <= 300) {
-        truncatedBeerDescription += sentence;
-        totalLength += sentence.length;
-    } else {
-        break;
-    }
-}
-
-  console.log(beerDescription[0].length);
   
 
-  // if (truncatedBeerDescription.length >= 260) {
-  //   truncatedBeerDescription = `${truncatedBeerDescription.slice(0, 250)}... `;
-  // }
+  if (description.length >= 200) {
+    description = `${description.slice(0, 200)}... `;
+  }
 
-  // if (truncatedBeerDescription === "") {
-  //   truncatedBeerDescription = `${description.slice(0, 250)}... `
-  // }
   
 
   return (
-    <div className="beers">
+    <div className={`beers ${sideNavToggled ? "opened" : "closed"}`}>
       <div className="beers__image-background">
         <img className="beers__image" src={image} alt="Beer" />
       </div>
       <div className="beers__info">
-        <h1 className="beers__name">{name}</h1>
-        <h3 className="beers__tagline">{tagline}</h3>
+        <h1
+          style={{ fontSize: name.length >= 46 ? "22px" : "30px" }}
+          className="beers__name"
+        >
+          {name}
+        </h1>
+        <h3
+          style={{ fontSize: name.length >= 46 ? "14px" : "initial" }}
+          className="beers__tagline"
+        >
+          {tagline}
+        </h3>
         <p className="beers__brew-date">Brew Date: {brewDate}</p>
         <p className="beers__abv">ABV: {abv}</p>
         <p className="beers__ph">pH: {ph}</p>
-        <p className="beers__description">{truncatedBeerDescription}</p>
+        <p className="beers__food-pairing">
+          Great With:
+          <ul className='beers__food-pairing__list'>
+            {foodPairing.map((item, index) => (
+              <li key={index}>{item.trim()}</li>
+            ))}
+          </ul>
+        </p>
+        <p className="beers__description">{description}</p>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ type SearchValue = {
   onAbvCheckBoxChange: (value: boolean) => void;
   onClassicCheckBoxChange: (value: boolean) => void;
   onAcidityCheckBoxChange: (value: boolean) => void;
+  onSideNavMenuToggle: (value: boolean) => void;
 };
 
 const SideNav = ({
@@ -16,15 +17,23 @@ const SideNav = ({
   onAbvCheckBoxChange,
   onClassicCheckBoxChange,
   onAcidityCheckBoxChange,
+  onSideNavMenuToggle
 }: SearchValue) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [abvChecked, setAbvChecked] = useState<boolean>(false);
   const [classicChecked, setClassicChecked] = useState<boolean>(false);
   const [acidityChecked, setAcidityChecked] = useState<boolean>(false);
+  const [sideNavToggled, setSideNavToggled] = useState<boolean>(false);
 
   onAbvCheckBoxChange(abvChecked);
   onClassicCheckBoxChange(classicChecked)
   onAcidityCheckBoxChange(acidityChecked)
+  onSideNavMenuToggle(sideNavToggled)
+  
+
+  const handleToggleMenu = () => {
+    setSideNavToggled(!sideNavToggled)
+  }
 
   const handleInput = (event: FormEvent<HTMLInputElement>) => {
     const cleanInput = event.currentTarget.value.toLowerCase();
@@ -45,11 +54,13 @@ const SideNav = ({
   }
 
   return (
-    <div className="nav">
+    <div className={`nav ${sideNavToggled ? 'shown' : 'hidden'}`}>
+      <i className="fas fa-bars" id="menu" onClick={handleToggleMenu}></i>
       <SearchBox
         label="Search: "
         searchTerm={searchTerm}
         handleInput={handleInput}
+        placeholder="Search for beer..."
       />
       <FilterButtons
         label="High ABV"
