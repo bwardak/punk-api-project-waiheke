@@ -1,7 +1,9 @@
 @use '../../assets/variables/variables' as *;
 
 .nav {
-  background-color: white;
+  background-color: $color-dark-1;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+  color: $color-light-1;
   height: 100vh;
   width: 300px;
   position: fixed;

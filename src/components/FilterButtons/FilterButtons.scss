@@ -1,0 +1,43 @@
+@use '../../assets/variables/variables' as *;
+
+.filter-buttons {
+  width: 80%;
+  margin: 80px 0 0 30px;
+  display: flex;
+  justify-content: space-between;
+
+  &__label {
+    font-size: 1.8rem;
+  }
+
+  &__input {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 40px;
+    width: 40px;
+    background-color: $color-light-1;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__input:after {
+    content: '\f00d';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 35px;
+    color: $color-dark-1;
+    display: none;
+  }
+
+  &__input:hover {
+    background-color: $color-light-2;
+  }
+
+
+  &__input:checked::after {
+    display: block;
+  }
+}

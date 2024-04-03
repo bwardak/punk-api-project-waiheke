@@ -1,4 +1,4 @@
-@use '../../assets/variables/variables' as *;
+@use 'assets/variables/variables' as *;
 
 * {
   margin: 0px;
@@ -9,8 +9,8 @@
 
 .app-container {
   display: flex;
-  height: 100vh;
-  background-color: #AB5700;
+  height: 100%;
+  background-color: $color-light-2;
 }
 
 .nav-bar {
