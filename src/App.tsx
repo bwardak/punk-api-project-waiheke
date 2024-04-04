@@ -7,6 +7,7 @@ import beers from "./data/dataFormatted (1)";
 import { BrowserRouter, Route, Routes, Navigate  } from "react-router-dom";
 import BeerContent from "./components/BeerContent/BeerContent"
 import Home from "./components/Home/Home";
+import BeerInfo from "./components/BeerInfo/BeerInfo";
 
 const App = () => {
   
@@ -17,6 +18,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/beers" element={<BeerContent />} />
+          <Route path="/beers/:beerId" element={<BeerInfo beers={beers}/>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

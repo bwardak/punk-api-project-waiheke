@@ -1,0 +1,47 @@
+@use '../../assets/variables/variables' as *;
+
+.beer-info-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .beer-info {
+  display: grid;
+  grid-template-columns: repeat(20, 40px);
+  grid-template-rows: repeat(20, 40px);
+  height: 800px;
+  width: 800px;
+  border-radius: 50%;
+  background-color: $color-dark-2;
+
+    &__image {
+      grid-area: 4 / 13 / 10 / 15;
+      width: 70px;
+      height: 240px;
+    }
+
+    &__name {
+      grid-area: 2 / 9 / 4 / 13;
+      color: white;
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+
+  .back-link {
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    text-decoration: none;
+    color: $color-light-2;
+    font-family: $primary-font;
+    font-size: 1.5rem;
+    background-color: $color-dark-2-transparent;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+
+}

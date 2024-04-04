@@ -1,4 +1,6 @@
+import { Button } from '../Button/Button';
 import './BeerTiles.scss'
+import { Link } from 'react-router-dom';
 
 type Beers = {
   image: string;
@@ -10,13 +12,14 @@ type Beers = {
   ph: number | null;
   foodPairing: string[];
   sideNavToggled: boolean;
+  beerID: number;
 }
 
-const BeerTiles = ({image, name, description, tagline, brewDate, abv, ph, foodPairing, sideNavToggled}: Beers) => {
+const BeerTiles = ({image, name, description, tagline, brewDate, abv, ph, foodPairing, sideNavToggled, beerID}: Beers) => {
 
 console.log(sideNavToggled);
 
-  
+  const beerIdString = beerID.toString()
 
   if (description.length >= 200) {
     description = `${description.slice(0, 200)}... `;
@@ -47,13 +50,19 @@ console.log(sideNavToggled);
         <p className="beers__ph">pH: {ph}</p>
         <p className="beers__food-pairing">
           Great With:
-          <ul className='beers__food-pairing__list'>
+          <ul className="beers__food-pairing__list">
             {foodPairing.map((item, index) => (
               <li key={index}>{item.trim()}</li>
             ))}
           </ul>
         </p>
         <p className="beers__description">{description}</p>
+        
+        <Link to={`/beers/${beerIdString}`} key={beerIdString}>
+          <Button />
+        </Link>
+
+        
       </div>
     </div>
   );

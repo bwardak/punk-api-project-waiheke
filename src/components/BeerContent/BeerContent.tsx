@@ -61,6 +61,8 @@ export const Home = () => {
      beer.name.toLowerCase().includes(searchTerm)
    );
 
+   
+
   return (
     <div className="app-container" id={`${sideNavToggled ? "shrink" : "grow"}`}>
       <div className="nav-bar">
