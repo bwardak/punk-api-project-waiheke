@@ -3,6 +3,7 @@ import { FormEvent } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import "./SideNav.scss";
 import FilterButtons from "../FilterButtons/FilterButtons";
+import { Button } from "../Button/Button";
 
 type SearchValue = {
   onSearchTermChange: (value: string) => void;

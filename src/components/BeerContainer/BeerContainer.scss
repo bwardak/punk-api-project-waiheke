@@ -36,6 +36,17 @@
   }
 }
 
+.button-container {
+  .button--home-beers {
+    position: absolute;
+    margin: -90px 0 0 150px;
+    width: 100px;
+    background-color: $color-dark-2-transparent;
+    color: $color-light-2;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
 
 .beer-tiles-container {
   display: flex;

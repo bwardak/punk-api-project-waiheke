@@ -10,7 +10,7 @@ type ButtonProps = {
 
 export const Button = ({onClick, variant, disabled, label, hide}: ButtonProps) => {
   return (
-    <div>
+    <div className='button-container'>
       <button style={{display: hide ? 'none' : undefined}} disabled={disabled} className={`button button--${variant}`} onClick={onClick}>{label}</button>
     </div>
   )

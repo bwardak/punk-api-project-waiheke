@@ -3,6 +3,7 @@ import "./BeerContainer.scss";
 import { Beer } from "../../data/types";
 import { useEffect, useState } from "react";
 import { Button } from "../Button/Button";
+import { Link } from "react-router-dom";
 
 type BeerContainerProps = {
   searchBeers: Beer[];
@@ -84,6 +85,10 @@ const BeerContainer = ({ searchBeers, sideNavToggled, abvChecked, classicChecked
           onClick={goLastPage}
         />
       </div>
+      <Link to="/home">
+        <Button variant="home-beers" disabled={false} label="Home" />
+      </Link>
+
       <div
         className={`beer-tiles-container ${
           searchBeers.length <= 30 ? "extend-container" : ""

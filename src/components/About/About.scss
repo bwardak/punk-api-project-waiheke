@@ -1,0 +1,45 @@
+@use '../../assets/variables/variables' as *;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: $primary-font;
+  height: 50vh;
+
+  .home-link {
+    align-self: flex-start;
+  }
+
+  .button-container {
+    margin: 20px 0 0 50px;
+
+    .button--home {
+      width: 100px;
+      background-color: $color-dark-2-transparent;
+      color: $color-light-2;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+
+  &__heading {
+    font-size: 3rem;
+    align-self: flex-start;
+    margin: 20px 0 0 50px;
+  }
+
+  .text-wrapper {
+    height: 100%;
+    width: 70%;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 8rem;
+    color: $color-light-2;
+    background-color: $color-black;
+    margin: 50px 0;
+  }
+}
