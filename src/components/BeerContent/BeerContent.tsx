@@ -1,10 +1,8 @@
-import "./BeerContent.scss";
 import { useEffect, useState } from "react";
 import BeerContainer from "../BeerContainer/BeerContainer";
 import SideNav from "../SideNav/SideNav";
 import { Beer } from "../../data/types";
 import beers from "../../data/dataFormatted (1)";
-
 
 export const BeerContent = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
