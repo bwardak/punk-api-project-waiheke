@@ -27,3 +27,17 @@
     color: $color-dark-2;
   }
 }
+
+@media (max-width: 768px) {
+  .search-box{
+
+    &__label {
+      font-size: 1.5rem;
+    }
+
+    &__input{
+      width: 100px;
+    }
+  }
+  
+}

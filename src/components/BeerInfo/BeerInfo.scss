@@ -69,7 +69,6 @@
 
     &__description-text {
       grid-area: 12 / 5 / 16 / 12;
-      
       margin-top: -15px;
     }
   }
@@ -89,4 +88,49 @@
   }
 
 
+}
+
+@media (max-width: 768px) {
+  .beer-info-container {
+
+    .beer-info {
+      grid-template-columns: repeat(20, 30px);
+      grid-template-rows: repeat(20, 30px);
+      width: 600px;
+      height: 600px;
+      font-size: 0.8rem;
+
+      
+    }
+
+    .back-link {
+      font-size: 1.0rem;
+    } 
+  }
+}
+
+@media (max-width: 320px) {
+  .beer-info-container {
+    
+    .beer-info {
+      grid-template-columns: repeat(20, 15px);
+      grid-template-rows: repeat(20, 15px);
+      width: 300px;
+      height: 300px;
+      font-size: 0.5rem;
+
+      &__name {
+        font-size: 1.2rem;
+      }
+
+      &__image {
+        height: 120px;
+        min-width: 35px;
+      }
+    }
+
+    .back-link {
+      font-size: 1.0rem;
+    } 
+  }
 }

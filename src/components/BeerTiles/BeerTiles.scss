@@ -57,6 +57,7 @@
     overflow: hidden;
     margin: 9px 10px 10px;
     font-weight: 700;
+    font-size: 14px;
   }
 
   &__name {
@@ -73,22 +74,25 @@
   &__brew-date {
     align-self: flex-start;
     margin-left: 15px;
+    font-size: 14px;
   }
 
   &__abv {
     align-self: flex-start;
     margin-left: 15px;
+    font-size: 14px;
   }
 
   &__ph {
     align-self: flex-start;
     margin-left: 15px;
+    font-size: 14px;
   }
 
   &__food-pairing {
     align-self: flex-start;
     margin-left: 15px;
-    // height: 140px;
+    font-size: 14px;
 
     &__list {
       margin: 5px 40px;
@@ -102,4 +106,36 @@
 
 .closed {
   margin: 30px 87.5px;
+}
+
+@media (max-width: 768px) {
+  .beers {
+    max-width: 45%;
+    min-width: 45%;
+    flex: 0 0 calc(45% - 60px);
+  }
+
+  .opened {
+    margin: 30px 15px;
+  }
+
+  .closed {
+    margin: 30px 15px;
+  }
+}
+
+@media (max-width: 320px) {
+  .beers {
+    max-width: 100%;
+    min-width: 100%;
+    flex: 0 0 calc(100% - 60px);
+  }
+
+  .opened {
+    margin: 30px 0;
+  }
+
+  .closed {
+    margin: 30px 0;
+  }
 }

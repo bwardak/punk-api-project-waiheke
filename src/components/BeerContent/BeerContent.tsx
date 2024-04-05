@@ -48,7 +48,7 @@ export const BeerContent = () => {
        });
      }
      if (acidityChecked) {
-       beersCopy = beersCopy.filter((beer) => beer.ph <= 4 && beer.ph !== null);
+       beersCopy = beersCopy.filter((beer) => beer.ph !== null && beer.ph <= 4);
      }
      if (!abvChecked && !classicChecked && !acidityChecked) {
        beersCopy = beersCopy;
