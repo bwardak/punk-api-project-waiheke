@@ -66,6 +66,17 @@
     &--1 {
       display: none;
     }
+
+    &--2 {
+      margin: 0;
+      justify-content: center;
+    }
+  }
+
+  .button-container {
+    .button--home-beers {
+      margin-left: 100px;
+    }
   }
 }
 
