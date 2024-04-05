@@ -17,7 +17,7 @@
   width: 800px;
   border-radius: 50%;
   border: 20px solid #E67500;
-  // box-shadow: 2px 0 0 2px black;
+  color: $color-light-2;
   background-color: $color-dark-2;
   
 
@@ -30,34 +30,47 @@
 
     &__name {
       grid-area: 2 / 6 / 4 / 15;
-      color: white;
       text-align: center;
       font-size: 2.5rem;
+      font-weight: 500;
+      text-decoration: underline;
     }
 
     &__brewed {
       grid-area: 5 / 5 / 6 / 9;
-      color: white;
+      
     }
 
     &__abv {
       grid-area: 6 / 5 / 7 / 9;
-      color: white;
+      
     }
 
     &__ph {
       grid-area: 7 / 5 / 8 / 9;
-      color: white;
+      
+    }
+
+    &__volume {
+      grid-area: 8 / 5 / 9 / 9;
+      
+    }
+
+    &__fermentation {
+      grid-area: 9 / 5 / 10 / 9;
+      
     }
 
     &__description-label {
-      grid-area: 8 / 5 / 9 / 9;
-      color: white;
+      grid-area: 11 / 5 / 12 / 9;
+      
+      text-decoration: underline;
     }
 
     &__description-text {
-      grid-area: 9 / 5 / 13 / 12;
-      color: white;
+      grid-area: 12 / 5 / 16 / 12;
+      
+      margin-top: -15px;
     }
   }
 

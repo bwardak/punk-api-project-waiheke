@@ -35,8 +35,11 @@ const BeerInfo = ({beers}: BeerInfoProps) => {
         <p className='beer-info__abv'>ABV: {beer.abv}</p>
         <p className='beer-info__ph'>pH: {beer.ph}</p>
         <p className='beer-info__description-label'>Description: </p>
+        <p className="beer-info__volume">Volume: {beer.volume.value} {beer.volume.unit}</p>
+        <p className="beer-info__fermentation">Fermentation Temp: {beer.method.fermentation.temp.value} {beer.method.fermentation.temp.unit}</p>
         <br />
         <p className='beer-info__description-text'>{beer.description}</p>
+        
       </div>
     </div>
   );
