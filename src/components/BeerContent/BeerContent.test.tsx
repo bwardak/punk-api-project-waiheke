@@ -1,8 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import BeerContent from './BeerContent'
 import { MemoryRouter, Routes, Route } from "react-router-dom";
-import BeerInfo from "../BeerInfo/BeerInfo";
 
 it("should render the beer content", () => {
   render(

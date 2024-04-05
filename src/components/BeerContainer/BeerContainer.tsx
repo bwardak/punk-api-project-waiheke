@@ -13,22 +13,19 @@ type BeerContainerProps = {
   acidityChecked: boolean;
 };
 
-const BeerContainer = ({ searchBeers, sideNavToggled, abvChecked, classicChecked, acidityChecked }: BeerContainerProps) => {
-  const [page, setPage] = useState<number>(1)
+const BeerContainer = ({
+  searchBeers,
+  sideNavToggled,
+  abvChecked,
+  classicChecked,
+  acidityChecked,
+}: BeerContainerProps) => {
+  const [page, setPage] = useState<number>(1);
 
   const firstIndex: number = (page - 1) * 30;
-  const lastIndex: number = (firstIndex + 30);
-  // console.log(firstIndex, lastIndex);
-  
-  console.log(page);
-
-  // let abvPageReset = abvChecked
-  // let classicPageReset = classicChecked
-  // let acidityChecked = 
-  
+  const lastIndex: number = firstIndex + 30;
 
   let searchBeers50Results = [...searchBeers].slice(firstIndex, lastIndex);
-  // console.log(searchBeers50Results);
 
   useEffect(() => {
     if (abvChecked) {
@@ -42,23 +39,20 @@ const BeerContainer = ({ searchBeers, sideNavToggled, abvChecked, classicChecked
     if (acidityChecked) {
       setPage(1);
     }
-  }, [abvChecked, classicChecked, acidityChecked])
-
-  
+  }, [abvChecked, classicChecked, acidityChecked]);
 
   const goNextPage = () => {
-    setPage(page + 1)
-    searchBeers50Results = []
-  }
+    setPage(page + 1);
+    searchBeers50Results = [];
+  };
 
   if (page === 1) {
-    
   }
 
   const goLastPage = () => {
-    setPage(page - 1)
+    setPage(page - 1);
     searchBeers50Results = [];
-  }
+  };
 
   return (
     <div>

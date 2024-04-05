@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
-import './Home.scss'
-import SectionTiles from '../SectionTiles/SectionTiles';
-
-
+import { Link } from "react-router-dom";
+import "./Home.scss";
+import SectionTiles from "../SectionTiles/SectionTiles";
 
 export const Home = () => {
   return (
@@ -24,6 +22,6 @@ export const Home = () => {
       </Link>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;

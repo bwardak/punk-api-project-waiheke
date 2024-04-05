@@ -3,7 +3,6 @@ import { FormEvent } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import "./SideNav.scss";
 import FilterButtons from "../FilterButtons/FilterButtons";
-import { Button } from "../Button/Button";
 
 type SearchValue = {
   onSearchTermChange: (value: string) => void;
@@ -18,7 +17,7 @@ const SideNav = ({
   onAbvCheckBoxChange,
   onClassicCheckBoxChange,
   onAcidityCheckBoxChange,
-  onSideNavMenuToggle
+  onSideNavMenuToggle,
 }: SearchValue) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [abvChecked, setAbvChecked] = useState<boolean>(false);
@@ -27,14 +26,13 @@ const SideNav = ({
   const [sideNavToggled, setSideNavToggled] = useState<boolean>(false);
 
   onAbvCheckBoxChange(abvChecked);
-  onClassicCheckBoxChange(classicChecked)
-  onAcidityCheckBoxChange(acidityChecked)
-  onSideNavMenuToggle(sideNavToggled)
-  
+  onClassicCheckBoxChange(classicChecked);
+  onAcidityCheckBoxChange(acidityChecked);
+  onSideNavMenuToggle(sideNavToggled);
 
   const handleToggleMenu = () => {
-    setSideNavToggled(!sideNavToggled)
-  }
+    setSideNavToggled(!sideNavToggled);
+  };
 
   const handleInput = (event: FormEvent<HTMLInputElement>) => {
     const cleanInput = event.currentTarget.value.toLowerCase();
@@ -47,15 +45,15 @@ const SideNav = ({
   };
 
   const onClassicCheck = () => {
-    setClassicChecked(!classicChecked)
+    setClassicChecked(!classicChecked);
   };
 
   const onAcidityCheck = () => {
-    setAcidityChecked(!acidityChecked)
-  }
+    setAcidityChecked(!acidityChecked);
+  };
 
   return (
-    <div className={`nav ${sideNavToggled ? 'shown' : 'hidden'}`}>
+    <div className={`nav ${sideNavToggled ? "shown" : "hidden"}`}>
       <i className="fas fa-bars" id="menu" onClick={handleToggleMenu}></i>
       <SearchBox
         label="Search: "

@@ -1,4 +1,4 @@
-@use '../../assets/variables/variables' as *;
+@use "../../assets/variables/variables" as *;
 
 .filter-buttons {
   width: 80%;
@@ -24,7 +24,7 @@
   }
 
   &__input:after {
-    content: '\f0c8';
+    content: "\f0c8";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     font-size: 35px;
@@ -36,17 +36,16 @@
     background-color: $color-light-2;
   }
 
-
   &__input:checked::after {
     display: block;
   }
 }
 
 @media (max-width: 768px) {
-  .filter-buttons{
+  .filter-buttons {
     margin: 80px 0 0 10px;
 
-    &__label{
+    &__label {
       font-size: 1rem;
     }
 

@@ -1,4 +1,4 @@
-@use '../../assets/variables/variables' as *;
+@use "../../assets/variables/variables" as *;
 
 .beer-info-container {
   position: relative;
@@ -7,25 +7,23 @@
   align-items: center;
   height: 100vh;
   font-family: $primary-font;
-  
 
   .beer-info {
-  display: grid;
-  grid-template-columns: repeat(20, 40px);
-  grid-template-rows: repeat(20, 40px);
-  height: 800px;
-  width: 800px;
-  border-radius: 50%;
-  border: 20px solid #E67500;
-  color: $color-light-2;
-  background-color: $color-dark-2;
-  
+    display: grid;
+    grid-template-columns: repeat(20, 40px);
+    grid-template-rows: repeat(20, 40px);
+    height: 800px;
+    width: 800px;
+    border-radius: 50%;
+    border: 20px solid #e67500;
+    color: $color-light-2;
+    background-color: $color-dark-2;
 
     &__image {
       grid-area: 5 / 14 / 11 / 18;
       min-width: 70px;
       height: 240px;
-       box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0);
+      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0);
     }
 
     &__name {
@@ -38,32 +36,27 @@
 
     &__brewed {
       grid-area: 5 / 5 / 6 / 9;
-      
     }
 
     &__abv {
       grid-area: 6 / 5 / 7 / 9;
-      
     }
 
     &__ph {
       grid-area: 7 / 5 / 8 / 9;
-      
     }
 
     &__volume {
       grid-area: 8 / 5 / 9 / 9;
-      
     }
 
     &__fermentation {
       grid-area: 9 / 5 / 10 / 9;
-      
     }
 
     &__description-label {
       grid-area: 11 / 5 / 12 / 9;
-      
+
       text-decoration: underline;
     }
 
@@ -73,11 +66,10 @@
     }
   }
 
-
   .back-link {
     position: absolute;
-    top: 40px; 
-    left: 40px; 
+    top: 40px;
+    left: 40px;
     text-decoration: none;
     color: $color-light-2;
     font-family: $primary-font;
@@ -86,32 +78,26 @@
     border-radius: 10px;
     padding: 10px;
   }
-
-
 }
 
 @media (max-width: 768px) {
   .beer-info-container {
-
     .beer-info {
       grid-template-columns: repeat(20, 30px);
       grid-template-rows: repeat(20, 30px);
       width: 600px;
       height: 600px;
       font-size: 0.8rem;
-
-      
     }
 
     .back-link {
-      font-size: 1.0rem;
-    } 
+      font-size: 1rem;
+    }
   }
 }
 
 @media (max-width: 320px) {
   .beer-info-container {
-    
     .beer-info {
       grid-template-columns: repeat(20, 15px);
       grid-template-rows: repeat(20, 15px);
@@ -130,7 +116,7 @@
     }
 
     .back-link {
-      font-size: 1.0rem;
-    } 
+      font-size: 1rem;
+    }
   }
 }

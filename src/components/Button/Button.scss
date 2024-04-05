@@ -1,4 +1,4 @@
-@use '../../assets/variables/variables' as *;
+@use "../../assets/variables/variables" as *;
 
 .button {
   border: none;
@@ -16,6 +16,4 @@
 .button:hover {
   transform: scale(1.1);
   background-color: $color-light-3;
-  // color: $color-light-2;
-  // border: 2px solid $color-light-2;
 }

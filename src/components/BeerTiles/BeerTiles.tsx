@@ -1,6 +1,6 @@
-import { Button } from '../Button/Button';
-import './BeerTiles.scss'
-import { Link } from 'react-router-dom';
+import { Button } from "../Button/Button";
+import "./BeerTiles.scss";
+import { Link } from "react-router-dom";
 
 type Beers = {
   image: string;
@@ -13,19 +13,25 @@ type Beers = {
   foodPairing: string[];
   sideNavToggled: boolean;
   beerID: number;
-}
+};
 
-const BeerTiles = ({image, name, description, tagline, brewDate, abv, ph, foodPairing, sideNavToggled, beerID}: Beers) => {
-
-// console.log(sideNavToggled);
-
-  const beerIdString = beerID.toString()
+const BeerTiles = ({
+  image,
+  name,
+  description,
+  tagline,
+  brewDate,
+  abv,
+  ph,
+  foodPairing,
+  sideNavToggled,
+  beerID,
+}: Beers) => {
+  const beerIdString = beerID.toString();
 
   if (description.length >= 100) {
     description = `${description.slice(0, 100)}... `;
   }
-
-  
 
   return (
     <div className={`beers ${sideNavToggled ? "opened" : "closed"}`}>
@@ -58,15 +64,13 @@ const BeerTiles = ({image, name, description, tagline, brewDate, abv, ph, foodPa
         </p>
         <p>Description: </p>
         <p className="beers__description">{description}</p>
-        
-        <Link to={`/beers/${beerIdString}`} key={beerIdString}>
-          <Button label='More Details' variant='info' disabled={false} />
-        </Link>
 
-        
+        <Link to={`/beers/${beerIdString}`} key={beerIdString}>
+          <Button label="More Details" variant="info" disabled={false} />
+        </Link>
       </div>
     </div>
   );
-}
+};
 
-export default BeerTiles
+export default BeerTiles;

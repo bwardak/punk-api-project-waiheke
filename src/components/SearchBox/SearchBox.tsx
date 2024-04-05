@@ -1,17 +1,24 @@
-import { FormEventHandler } from 'react';
-import './SearchBox.scss'
+import { FormEventHandler } from "react";
+import "./SearchBox.scss";
 
 type SearchBoxProps = {
   label: string;
   searchTerm: string;
   handleInput: FormEventHandler<HTMLInputElement>;
   placeholder: string;
-}
+};
 
-const SearchBox = ({ label, searchTerm, handleInput, placeholder }: SearchBoxProps) => {
+const SearchBox = ({
+  label,
+  searchTerm,
+  handleInput,
+  placeholder,
+}: SearchBoxProps) => {
   return (
     <div className="search-box">
-      <label htmlFor={label} className='search-box__label'>{label}</label>
+      <label htmlFor={label} className="search-box__label">
+        {label}
+      </label>
       <input
         className="search-box__input"
         type="text"
@@ -23,6 +30,6 @@ const SearchBox = ({ label, searchTerm, handleInput, placeholder }: SearchBoxPro
       />
     </div>
   );
-}
+};
 
-export default SearchBox
+export default SearchBox;
