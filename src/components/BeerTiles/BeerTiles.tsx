@@ -17,7 +17,7 @@ type Beers = {
 
 const BeerTiles = ({image, name, description, tagline, brewDate, abv, ph, foodPairing, sideNavToggled, beerID}: Beers) => {
 
-console.log(sideNavToggled);
+// console.log(sideNavToggled);
 
   const beerIdString = beerID.toString()
 
@@ -60,7 +60,7 @@ console.log(sideNavToggled);
         <p className="beers__description">{description}</p>
         
         <Link to={`/beers/${beerIdString}`} key={beerIdString}>
-          <Button />
+          <Button label='More Details' variant='info' disabled={false} />
         </Link>
 
         

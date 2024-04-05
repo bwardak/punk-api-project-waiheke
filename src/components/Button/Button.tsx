@@ -1,9 +1,17 @@
 import './Button.scss'
 
-export const Button = () => {
+type ButtonProps = {
+  onClick?: () => void;
+  variant: string;
+  disabled: boolean;
+  label: string;
+  hide?: boolean;
+}
+
+export const Button = ({onClick, variant, disabled, label, hide}: ButtonProps) => {
   return (
     <div>
-      <button className='button'>More Details</button>
+      <button style={{display: hide ? 'none' : undefined}} disabled={disabled} className={`button button--${variant}`} onClick={onClick}>{label}</button>
     </div>
   )
 }

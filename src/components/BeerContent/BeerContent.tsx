@@ -54,7 +54,6 @@ export const BeerContent = () => {
        beersCopy = beersCopy;
      }
      setFilteredBeers(beersCopy);
-     console.log(beersCopy);
    }, [abvChecked, classicChecked, acidityChecked]);
 
    const searchedBeers = filteredBeers.filter((beer) =>
@@ -84,6 +83,9 @@ export const BeerContent = () => {
           <BeerContainer
             searchBeers={searchedBeers}
             sideNavToggled={sideNavToggled}
+            abvChecked={abvChecked}
+            classicChecked={classicChecked}
+            acidityChecked={acidityChecked}
           />
         </div>
       </div>

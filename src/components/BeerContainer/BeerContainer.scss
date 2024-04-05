@@ -1,7 +1,52 @@
 @use '../../assets/variables/variables' as *;
 
+.page-container {
+
+  display: flex;
+  flex-direction: row-reverse;
+  
+  &--1 {
+    margin: -90px 50px 0 0;
+  }
+
+  &--2 {
+    margin: 30px 50px 0 0;
+  }
+
+  .button--next {
+    height: 45px;
+    width: 100px;
+  }
+
+  .button--last {
+    height: 45px;
+    width: 100px;
+  }
+
+  &__page {
+    font-family: $primary-font;
+    font-size: 2rem;
+    margin: 0 10px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    border: 2px solid $color-black;
+    border-radius: 50%;
+    background-color: $color-light-2;
+  }
+}
+
+
 .beer-tiles-container {
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
+}
+
+.page-hidden {
+  display: none;
+}
+
+.extend-container {
+  margin-top: 90px;
 }
