@@ -1,0 +1,21 @@
+@use '../../assets/variables/variables' as *;
+
+.button {
+  border: none;
+  height: 60px;
+  width: 180px;
+  margin: 0 0 40px;
+  background-color: $color-light-2;
+  font-size: 1.2rem;
+  color: $color-dark-2;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  background-color: $color-light-3;
+  // color: $color-light-2;
+  // border: 2px solid $color-light-2;
+}

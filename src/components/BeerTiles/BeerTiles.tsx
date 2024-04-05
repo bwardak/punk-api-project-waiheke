@@ -21,8 +21,8 @@ console.log(sideNavToggled);
 
   const beerIdString = beerID.toString()
 
-  if (description.length >= 200) {
-    description = `${description.slice(0, 200)}... `;
+  if (description.length >= 100) {
+    description = `${description.slice(0, 100)}... `;
   }
 
   
@@ -56,6 +56,7 @@ console.log(sideNavToggled);
             ))}
           </ul>
         </p>
+        <p>Description: </p>
         <p className="beers__description">{description}</p>
         
         <Link to={`/beers/${beerIdString}`} key={beerIdString}>

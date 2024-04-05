@@ -1,9 +1,10 @@
 @use '../../assets/variables/variables' as *;
 
 .beers {
-  max-width: 459px;
-  height: 700px;
-  max-height: 700px;
+  max-width: 449px;
+  min-width: 449px;
+  height: 750px;
+  max-height: 750px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -36,7 +37,7 @@
   }
 
   &__info {
-    background-color: $color-dark-1;
+    background-color: $color-dark-2;
     height: 100%;
     width: 100%;
     display: flex;
@@ -54,7 +55,7 @@
     text-align: center;
     height: 100%;
     overflow: hidden;
-    margin: 15px 10px 10px;
+    margin: 9px 10px 10px;
     font-weight: 700;
   }
 

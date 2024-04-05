@@ -17,7 +17,7 @@ const BeerInfo = ({beers}: BeerInfoProps) => {
   }
   
   return (
-    <div className="beer-info-container">
+    <div data-testid="beer-info" className="beer-info-container">
       <Link to="/beers" className='back-link'>
         <h1 className='back'>BACK</h1>
       </Link>

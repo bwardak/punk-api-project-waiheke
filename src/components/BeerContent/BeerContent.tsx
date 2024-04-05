@@ -6,7 +6,7 @@ import { Beer } from '../../data/types';
 import beers from '../../data/dataFormatted (1)';
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-export const Home = () => {
+export const BeerContent = () => {
    const [searchTerm, setSearchTerm] = useState<string>("");
    const [abvChecked, setAbvChecked] = useState<boolean>(false);
    const [classicChecked, setClassicChecked] = useState<boolean>(false);
@@ -64,8 +64,12 @@ export const Home = () => {
    
 
   return (
-    <div className="app-container" id={`${sideNavToggled ? "shrink" : "grow"}`}>
-      <div className="nav-bar">
+    <div
+      data-testid="beer-content"
+      className="app-container"
+      id={`${sideNavToggled ? "shrink" : "grow"}`}
+    >
+      <div data-testid="side-nav" className="nav-bar">
         <SideNav
           onSearchTermChange={handleSearchTermChange}
           onAbvCheckBoxChange={handleAbvCheckboxChange}
@@ -76,7 +80,7 @@ export const Home = () => {
       </div>
       <div className="main-screen">
         <h1 className="main-screen__header">BEER</h1>
-        <div className="beer-tiles">
+        <div data-testid="beers-tiles" className="beer-tiles">
           <BeerContainer
             searchBeers={searchedBeers}
             sideNavToggled={sideNavToggled}
@@ -87,4 +91,4 @@ export const Home = () => {
   );
 }
 
-export default Home
+export default BeerContent

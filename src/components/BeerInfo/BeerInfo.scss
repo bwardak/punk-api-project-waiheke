@@ -6,6 +6,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: $primary-font;
+  
 
   .beer-info {
   display: grid;
@@ -14,26 +16,56 @@
   height: 800px;
   width: 800px;
   border-radius: 50%;
+  border: 20px solid #E67500;
+  // box-shadow: 2px 0 0 2px black;
   background-color: $color-dark-2;
+  
 
     &__image {
-      grid-area: 4 / 13 / 10 / 15;
-      width: 70px;
+      grid-area: 5 / 14 / 11 / 18;
+      min-width: 70px;
       height: 240px;
+       box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0);
     }
 
     &__name {
-      grid-area: 2 / 9 / 4 / 13;
+      grid-area: 2 / 6 / 4 / 15;
       color: white;
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.5rem;
+    }
+
+    &__brewed {
+      grid-area: 5 / 5 / 6 / 9;
+      color: white;
+    }
+
+    &__abv {
+      grid-area: 6 / 5 / 7 / 9;
+      color: white;
+    }
+
+    &__ph {
+      grid-area: 7 / 5 / 8 / 9;
+      color: white;
+    }
+
+    &__description-label {
+      grid-area: 8 / 5 / 9 / 9;
+      color: white;
+    }
+
+    &__description-text {
+      grid-area: 9 / 5 / 13 / 12;
+      color: white;
     }
   }
 
+
   .back-link {
     position: absolute;
-    top: 20px; 
-    left: 20px; 
+    top: 40px; 
+    left: 40px; 
     text-decoration: none;
     color: $color-light-2;
     font-family: $primary-font;
